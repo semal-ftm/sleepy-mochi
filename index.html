@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#d6c3ec" />
+    <meta name="description" content="Sleepy Mochi — a tiny squish break for your busy brain." />
+    <title>Sleepy Mochi</title>
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cellipse cx='32' cy='38' rx='27' ry='20' fill='%23eea8b6'/%3E%3Cpath d='M20 38q4 3 8 0M36 38q4 3 8 0' stroke='%233b2731' stroke-width='2.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E"
+    />
+  </head>
+  <body>
+    <div class="app">
+      <main class="stage">
+        <header class="brand">
+          <h1>Sleepy Mochi</h1>
+          <p class="subtitle">A tiny squish break for your busy brain.</p>
+        </header>
+
+        <div class="viewport" id="viewport">
+          <div class="fallback" id="fallback" hidden>
+            <div class="fallback-card">
+              <div class="fallback-face" aria-hidden="true">( ˘ω˘ )</div>
+              <h2>The mochi can't wake up here</h2>
+              <p>
+                Your browser or device doesn't seem to support WebGL, which this little friend needs
+                to wobble. Try a recent version of Chrome, Firefox, Edge, or Safari, or turn on
+                hardware acceleration.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <p class="hint">Poke, drag, and release. Shhh… it was sleeping.</p>
+      </main>
+
+      <aside class="panel" aria-label="Mochi controls">
+        <section class="group flavors">
+          <h2 class="group-title">Flavor</h2>
+          <div class="swatches" role="radiogroup" aria-label="Mochi color">
+            <button class="swatch is-active" type="button" role="radio" aria-checked="true" data-flavor="strawberry" title="Strawberry pink">
+              <span class="dot" style="--dot: #eea8b6"></span><span class="swatch-label">Strawberry</span>
+            </button>
+            <button class="swatch" type="button" role="radio" aria-checked="false" data-flavor="lavender" title="Lavender">
+              <span class="dot" style="--dot: #c4b1ea"></span><span class="swatch-label">Lavender</span>
+            </button>
+            <button class="swatch" type="button" role="radio" aria-checked="false" data-flavor="vanilla" title="Vanilla cream">
+              <span class="dot" style="--dot: #efd6a4"></span><span class="swatch-label">Vanilla</span>
+            </button>
+          </div>
+        </section>
+
+        <section class="group actions" aria-label="Actions">
+          <button class="btn btn-primary" type="button" id="btn-squish">Squish</button>
+          <button class="btn btn-primary" type="button" id="btn-jiggle">Jiggle</button>
+          <button class="btn" type="button" id="btn-reset">Reset</button>
+        </section>
+
+        <section class="group sliders" aria-label="Feel">
+          <label class="slider">
+            <span class="slider-label">Softness</span>
+            <input type="range" id="softness" min="0" max="100" value="60" />
+          </label>
+          <label class="slider">
+            <span class="slider-label">Bounciness</span>
+            <input type="range" id="bounciness" min="0" max="100" value="55" />
+          </label>
+          <label class="slider">
+            <span class="slider-label">Damping</span>
+            <input type="range" id="damping" min="0" max="100" value="40" />
+          </label>
+        </section>
+
+        <section class="group sound">
+          <button class="btn btn-sound" type="button" id="btn-sound" aria-pressed="false">
+            <svg class="icon icon-off" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9h4l5-4v14l-5-4H4z" /><path d="M17 9l4 6M21 9l-4 6" /></svg>
+            <svg class="icon icon-on" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9h4l5-4v14l-5-4H4z" /><path d="M16.5 8.5a5 5 0 0 1 0 7M19 6a8.5 8.5 0 0 1 0 12" /></svg>
+            <span class="sound-label">Sound off</span>
+          </button>
+        </section>
+      </aside>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
